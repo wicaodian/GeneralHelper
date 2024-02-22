@@ -9,14 +9,14 @@ Since GeneralHelper is defined as an object class, you can directly invoke its f
 
 ## List of functions available
 
-#### toggleVisibilityOf
+### toggleVisibilityOf
 ```kotlin
 
 // Assuming `myView` is a View object in your layout
 GeneralHelper().toggleVisibilityOf(myView)
 
 ```
-#### toggleVisibilityWithCallback
+### toggleVisibilityWithCallback
 ```kotlin
 
 // Assuming `myView` is a View object in your layout
@@ -25,7 +25,7 @@ GeneralHelper(). toggleVisibilityWithCallback(myView){
 }
 
 ```
-#### showToast
+### showToast
 ```kotlin
 // Display a short toast message
 GeneralHelper().showToast(context, "Hello, world!")

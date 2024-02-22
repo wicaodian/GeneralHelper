@@ -1,6 +1,8 @@
 package utils
 
+import android.content.Context
 import android.view.View
+import android.widget.Toast
 
 object GeneralHelper {
     /**
@@ -26,4 +28,14 @@ object GeneralHelper {
         callback()
     }
 
+    /**
+     * Displays a toast message.
+     *
+     * @param context The context in which the toast should be displayed.
+     * @param message The message to be displayed in the toast.
+     * @param duration The duration for which the toast should be displayed. Defaults to [Toast.LENGTH_SHORT].
+     */
+    fun showToast(context: Context, message: String, duration: Int = Toast.LENGTH_SHORT) {
+        Toast.makeText(context, message, duration).show()
+    }
 }

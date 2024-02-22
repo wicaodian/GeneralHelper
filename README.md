@@ -1,0 +1,2 @@
+# GeneralHelper
+  GeneralHelper is a versatile utility class in an Android Kotlin application designed to provide a wide array of common functionalities needed across the app. By encapsulating miscellaneous utility functions within GeneralHelper, developers can easily access and utilize these methods throughout the app, thereby streamlining the coding process and improving overall code organization.

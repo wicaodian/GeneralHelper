@@ -23,6 +23,7 @@ GeneralHelper(). toggleVisibilityWithCallback(myView) {
     Log.d("VisibilityToggle", "Visibility change completed")
 }
 ```
+
 ### showToast
 ```kotlin
 // Display a short toast message
@@ -35,12 +36,14 @@ GeneralHelper().showToast(context, "This is a longer message", Toast.LENGTH_LONG
 val customDuration = 3000 // milliseconds
 GeneralHelper().showToast(context, "Custom duration toast", customDuration)
 ```
+
 ### copyTextToClipboard
 ```kotlin
 // Usage without callback
 val textToCopy = "This is the text to copy to clipboard"
 GeneralHelper().copyTextToClipboard(context, textToCopy)
 ```
+
 ### toggleVisibilityWithCallback
 ```kotlin
 // Usage with callback

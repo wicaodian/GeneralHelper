@@ -27,13 +27,13 @@ GeneralHelper(). toggleVisibilityWithCallback(myView){
 
 ```kotlin
 // Display a short toast message
-showToast(context, "Hello, world!")
+GeneralHelper(). showToast(context, "Hello, world!")
 
 // Display a long toast message
-showToast(context, "This is a longer message", Toast.LENGTH_LONG)
+GeneralHelper(). showToast(context, "This is a longer message", Toast.LENGTH_LONG)
 
 // Display a custom duration toast message (e.g., 3 seconds)
 val customDuration = 3000 // milliseconds
-showToast(context, "Custom duration toast", customDuration)
+GeneralHelper(). showToast(context, "Custom duration toast", customDuration)
 
 ```

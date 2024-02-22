@@ -15,4 +15,15 @@ object GeneralHelper {
         view.visibility = if (view.visibility == View.VISIBLE) View.GONE else View.VISIBLE
     }
 
+    /**
+     * Toggles the visibility of a [View] and executes a callback function after.
+     *
+     * @param view The [View] to toggle visibility on.
+     * @param callback The function to execute after toggling visibility.
+     */
+    fun toggleVisibilityWithCallback(view: View, callback: () -> Unit) {
+        view.visibility = if (view.visibility == View.VISIBLE) View.GONE else View.VISIBLE
+        callback()
+    }
+
 }

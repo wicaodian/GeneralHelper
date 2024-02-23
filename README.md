@@ -44,7 +44,7 @@ val textToCopy = "This is the text to copy to clipboard"
 GeneralHelper().copyTextToClipboard(context, textToCopy)
 ```
 
-### toggleVisibilityWithCallback
+### copyTextToClipboardWithCallback
 ```kotlin
 // Usage with callback
 val textToCopy = "This is the text to copy to clipboard"
@@ -52,5 +52,16 @@ GeneralHelper().copyTextToClipboard(context, textToCopy) {
 // Callback lambda: Perform actions after the clipboard operation is completed
 // For example, show a toast message indicating that the text has been copied 
     GeneralHelper().showToast(context, "Text copied to clipboard")
+}
+```
+
+### isInternetAvailable
+```kotlin
+if (GeneralHelper().isInternetAvailable(this)) {
+    // Internet is available
+    GeneralHelper().showToast(this, "Internet is available")
+} else {
+    // Internet is not available
+    GeneralHelper().showToast(this, "Internet is not available")
 }
 ```

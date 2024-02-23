@@ -3,6 +3,8 @@ package utils
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.view.View
 import android.widget.Toast
 
@@ -66,5 +68,24 @@ object GeneralHelper {
         clipboardManager.setPrimaryClip(clipData)
         callback()
     }
+
+    /**
+     * Determines if there is an active internet connection.
+     *
+     * Note: Requires the ACCESS_NETWORK_STATE permission in your AndroidManifest.xml:
+     * `<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />`
+     *
+     * @param context Context to access the ConnectivityManager.
+     * @return true if an internet connection is available, false otherwise.
+     */
+    fun isInternetAvailable(context: Context): Boolean {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork = connectivityManager.activeNetwork ?: return false
+        val capabilities = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
+        return capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
+    }
+
 
 }

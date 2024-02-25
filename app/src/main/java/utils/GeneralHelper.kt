@@ -80,22 +80,4 @@ object GeneralHelper {
                 capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
                 capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
     }
-
-    fun startReview(activity: Activity, onReviewDone: () -> Unit){
-        val manager = ReviewManagerFactory.create(activity)
-
-        val request = manager.requestReviewFlow()
-        request.addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                // We got the ReviewInfo object
-                val reviewInfo = task.result
-                val flow = manager.launchReviewFlow(activity, reviewInfo)
-                flow.addOnCompleteListener {
-                    onReviewDone()
-                }
-            } else {
-                Log.e("in-app-review", "task not successful")
-            }
-        }
-    }
 }

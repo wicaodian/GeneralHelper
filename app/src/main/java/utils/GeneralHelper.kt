@@ -1,10 +1,12 @@
 package utils
 
+import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 
@@ -31,18 +33,7 @@ object GeneralHelper {
         view.visibility = if (view.visibility == View.VISIBLE) View.GONE else View.VISIBLE
         callback()
     }
-
-    /**
-     * Displays a toast message.
-     *
-     * @param context The context in which the toast should be displayed.
-     * @param message The message to be displayed in the toast.
-     * @param duration The duration for which the toast should be displayed. Defaults to [Toast.LENGTH_SHORT].
-     */
-    fun showToast(context: Context, message: String, duration: Int = Toast.LENGTH_SHORT) {
-        Toast.makeText(context, message, duration).show()
-    }
-
+    
     /**
      * Copies the given non-null text to the clipboard.
      *
@@ -87,5 +78,21 @@ object GeneralHelper {
                 capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
     }
 
+    fun startReview(activity: Activity, onReviewDone: () -> Unit){
+        val manager = ReviewManagerFactory.create(activity)
 
+        val request = manager.requestReviewFlow()
+        request.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                // We got the ReviewInfo object
+                val reviewInfo = task.result
+                val flow = manager.launchReviewFlow(activity, reviewInfo)
+                flow.addOnCompleteListener {
+                    onReviewDone()
+                }
+            } else {
+                Log.e("in-app-review", "task not successful")
+            }
+        }
+    }
 }

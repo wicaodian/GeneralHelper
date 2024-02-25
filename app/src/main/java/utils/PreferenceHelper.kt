@@ -4,24 +4,10 @@ import android.content.Context
  * A utility class for managing application preferences in Android apps,
  * simplifying the storage and retrieval of simple key-value pairs using Android's SharedPreferences.
  */
-class PreferenceHelper {
-    companion object {
-        // Default name for the SharedPreferences file.
+object PreferenceHelper {
+
         private const val DEFAULT_PREF_NAME = "AppsPref"
 
-        // Singleton instance of PreferencesClass.
-        private lateinit var instance: PreferenceHelper
-
-        /**
-         * Returns the singleton instance of PreferencesClass, creating it if not already initialized.
-         */
-        fun getInstance(): PreferenceHelper {
-            if (!::instance.isInitialized) {
-                instance = PreferenceHelper()
-            }
-            return instance
-        }
-    }
 
 
     //region String Preference Functions

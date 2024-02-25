@@ -1,5 +1,6 @@
 package utils
 
+import android.Manifest.permission.ACCESS_NETWORK_STATE
 import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -9,6 +10,7 @@ import android.net.NetworkCapabilities
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresPermission
 
 object GeneralHelper {
     /**
@@ -33,7 +35,7 @@ object GeneralHelper {
         view.visibility = if (view.visibility == View.VISIBLE) View.GONE else View.VISIBLE
         callback()
     }
-    
+
     /**
      * Copies the given non-null text to the clipboard.
      *
@@ -69,6 +71,7 @@ object GeneralHelper {
      * @param context Context to access the ConnectivityManager.
      * @return true if an internet connection is available, false otherwise.
      */
+    @RequiresPermission(allOf = [ACCESS_NETWORK_STATE])
     fun isInternetAvailable(context: Context): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork = connectivityManager.activeNetwork ?: return false

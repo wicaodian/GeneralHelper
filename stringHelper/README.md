@@ -4,10 +4,14 @@
 This class provides a collection of utility functions that can be used in various projects for string manipulation, validation, and more.
 Below is a brief overview of each function and its usage.
 
+
+## Usage
+To use these functions, simply copy the Kotlin file into your project and call the functions with the necessary parameters.
+
 ## Functions
 
 ### capitalizeFirstLetterOfEachSentence
-- Capitalizes the first letter of each sentence in a string.
+Capitalizes the first letter of each sentence in a string.
 ```kotlin
 val result = capitalizeFirstLetterOfEachSentence("hello world. this is kotlin.")
 println(result) // "Hello world. This is kotlin."
@@ -181,8 +185,3 @@ val hasSpecialCharacter = atLeastOneSpecialCharacter("Hello*Kotlin")
 println(hasSpecialCharacter) // true
 
 ```
-
-## Usage
-
-To use these functions, simply copy the Kotlin file into your project and call the functions with the necessary parameters.
-

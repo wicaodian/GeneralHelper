@@ -11,12 +11,12 @@ Ensure that your application has access to Android's Context as it is required f
 ### showToast
 ```kotlin
 // Display a short toast message
-GeneralHelper().showToast(context, "Hello, world!")
+ToastHelper().shortToast(context, "Hello, world!")
 
 // Display a long toast message
-GeneralHelper().showToast(context, "This is a longer message", Toast.LENGTH_LONG)
+ToastHelper().longToast(context, "This is a longer message", Toast.LENGTH_LONG)
 
 // Display a custom duration toast message (e.g., 3 seconds)
 val customDuration = 3000 // milliseconds
-GeneralHelper().showToast(context, "Custom duration toast", customDuration)
+ToastHelper().customToastTime(context, "Custom duration toast", customDuration)
 ```

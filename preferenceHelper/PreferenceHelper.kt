@@ -43,7 +43,7 @@ object PreferenceHelper {
      * @param fileName The name of the SharedPreferences file.
      * @return The retrieved String value or the specified default value if the key is not found.
      */
-    fun getStringPreference(context: Context, key: String, defaultValue: String, fileName: String): String {
+    fun getStringPreference(context: Context, key: String, defaultValue: String="", fileName: String=DEFAULT_PREF_NAME): String {
         val sharedPref = context.getSharedPreferences(fileName, Context.MODE_PRIVATE)
         return sharedPref.getString(key, defaultValue) ?: defaultValue
     }
@@ -100,7 +100,7 @@ object PreferenceHelper {
      * @param fileName The name of the SharedPreferences file from which to retrieve the preference.
      * @return The retrieved Int value or the specified default value if the key is not found.
      */
-    fun getIntPreference(context: Context, key: String, defaultValue: Int, fileName: String): Int {
+    fun getIntPreference(context: Context, key: String, defaultValue: Int = 0, fileName: String = DEFAULT_PREF_NAME): Int {
         val sharedPref = context.getSharedPreferences(fileName, Context.MODE_PRIVATE)
         return sharedPref.getInt(key, defaultValue)
     }
@@ -153,7 +153,7 @@ object PreferenceHelper {
      * @param fileName The name of the SharedPreferences file from which to retrieve the preference.
      * @return The retrieved Boolean value or the specified default value if the key is not found.
      */
-    fun getBooleanPreference(context: Context, key: String, defaultValue: Boolean, fileName: String): Boolean {
+    fun getBooleanPreference(context: Context, key: String, defaultValue: Boolean = false, fileName: String = DEFAULT_PREF_NAME): Boolean {
         val sharedPref = context.getSharedPreferences(fileName, Context.MODE_PRIVATE)
         return sharedPref.getBoolean(key, defaultValue)
     }
@@ -211,7 +211,7 @@ object PreferenceHelper {
      * @param fileName The name of the SharedPreferences file from which to retrieve the preference.
      * @return The retrieved Float value or the specified default value if the key is not found.
      */
-    fun getFloatPreference(context: Context, key: String, defaultValue: Float, fileName: String): Float {
+    fun getFloatPreference(context: Context, key: String, defaultValue: Float = 0.0f, fileName: String = DEFAULT_PREF_NAME): Float {
         val sharedPref = context.getSharedPreferences(fileName, Context.MODE_PRIVATE)
         return sharedPref.getFloat(key, defaultValue)
     }

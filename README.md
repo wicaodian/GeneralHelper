@@ -19,3 +19,6 @@ It abstracts the boilerplate code required for SharedPreferences operations, mak
 ## [StringHelper Class](https://github.com/wicaodian/GeneralHelper/tree/main/stringHelper)
 StringHelper is a comprehensive Kotlin utility class designed for advanced string manipulation. 
 It offers a wide range of functions for text formatting, validation, transformation, and analysis. 
+
+## [LocalNotificationHelper Class](https://github.com/wicaodian/GeneralHelper/tree/main/localNotificationHelper)
+The LocalNotificationHelper class simplifies the process of creating and sending local notifications in an Android application.

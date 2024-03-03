@@ -22,3 +22,7 @@ It offers a wide range of functions for text formatting, validation, transformat
 
 ## [LocalNotificationHelper Class](https://github.com/wicaodian/GeneralHelper/tree/main/localNotificationHelper)
 The LocalNotificationHelper class simplifies the process of creating and sending local notifications in an Android application.
+
+## [ExpandCollapseAnimatorUtils Class](https://github.com/wicaodian/GeneralHelper/tree/main/expandCollapseViewHelper)
+The ExpandCollapseAnimatorUtils class provides a smooth animation effect for showing or hiding content in an Android app.
+It is ideal for enhancing the user experience by animating the expansion and collapse of View elements.

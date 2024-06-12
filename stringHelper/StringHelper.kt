@@ -31,9 +31,11 @@ object StringHelper{
     fun noNumbers(input: String): Boolean {
         return !input.matches(Regex(".*\\d.*"))
     }
+    @RequiresApi(Build.VERSION_CODES.O)
     fun encodeToBase64(input: String): String {
         return Base64.getEncoder().encodeToString(input.toByteArray())
     }
+    @RequiresApi(Build.VERSION_CODES.O)
     fun decodeFromBase64(input: String): String {
         return String(Base64.getDecoder().decode(input))
     }

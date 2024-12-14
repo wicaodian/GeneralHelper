@@ -102,8 +102,7 @@ object GeneralHelper {
             includeLowercase: Boolean = true,
             includeUppercase: Boolean = true,
             includeDigits: Boolean = true,
-            includeSpecialChars: Boolean = true,
-            exemptChars: List<Char> = emptyList()
+            includeSpecialChars: Boolean = true
                                ): String {
         // Define character categories
         val lowercaseLetters = "abcdefghijklmnopqrstuvwxyz"

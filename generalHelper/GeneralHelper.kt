@@ -102,7 +102,7 @@ object GeneralHelper {
             includeLowercase: Boolean = true,
             includeUppercase: Boolean = true,
             includeDigits: Boolean = true,
-            includeSpecialChars: Boolean = true,
+            includeSpecialChars: Boolean = true
                                ): String {
         // Define character categories
         val lowercaseLetters = "abcdefghijklmnopqrstuvwxyz"
@@ -131,5 +131,22 @@ object GeneralHelper {
             .map { characterSet[random.nextInt(characterSet.size)] }
             .joinToString("")
     }
+
+    /**
+     * Executes a given action on the main (UI) thread.
+     *
+     * This function is typically used when you need to update the UI
+     * from a background thread, as only the main thread can make changes to the UI.
+     * It uses the `ContextHandler.handler` to post the action to the main thread's message queue.
+     *
+     * @param action A lambda function that contains the code to be executed on the main thread.
+     *               This is passed as a parameter and will be run on the UI thread.
+     */
+    fun runOnUiThread(action: () -> Unit) {
+        ContextHandler.handler.post {
+            action()
+        }
+    }
+
 
 }
